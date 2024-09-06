@@ -18,6 +18,10 @@ class monkey(unittest.TestCase):
 class chimp(monkey):
    def swing(self):
         return f"{self.name} swings from branch to branch"
+
+class capuchin(monkey):
+    def howl(self):
+        return f"{self.name} Howls loudly!"
         
         
 class testmonkey(unittest.TestCase):
@@ -34,6 +38,16 @@ class TestChimp(unittest.TestCase):
     def test_swing(self):
         c = chimp("Mordecai", "apple")
         self.assertEqual(c.swing(), "Mordecai swings from branch to branch")
+        
+class TestCapuchinMonkey(unittest.TestCase):
+    def test_collect_fruit(self):
+        testCap = capuchin("Julien", "lemon")
+        self.assertEqual(testCap.collectfruit(), "Julien collects lemon")
+    
+    def test_howl(self):
+        testCap2 = capuchin("Mort", "Orange")
+        self.assertEqual(testCap2.howl(), "Mort Howls loudly!")
+
 
 if __name__ == '__main__':
     unittest.main()
